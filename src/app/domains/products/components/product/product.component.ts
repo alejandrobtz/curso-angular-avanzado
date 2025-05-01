@@ -6,16 +6,16 @@ import { Product } from '@shared/models/product.model';
 import { TimeAgoPipe } from '@shared/pipes/time-ago.pipe';
 
 @Component({
-    selector: 'app-product',
-    imports: [CommonModule, TimeAgoPipe, RouterLinkWithHref],
-    templateUrl: './product.component.html',
+	selector: 'app-product',
+	imports: [CommonModule, TimeAgoPipe, RouterLinkWithHref],
+	templateUrl: './product.component.html',
 })
 export class ProductComponent {
-  @Input({required: true}) product!: Product;
+	@Input({ required: true }) product!: Product;
 
-  @Output() addToCart = new EventEmitter();
+	@Output() addToCart = new EventEmitter();
 
-  addToCartHandler() {
-    this.addToCart.emit(this.product);
-  }
+	addToCartHandler() {
+		this.addToCart.emit(this.product);
+	}
 }
